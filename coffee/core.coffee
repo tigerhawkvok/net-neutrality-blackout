@@ -3,22 +3,29 @@ blackoutPage = ->
   divId = "fcc-net-neutrality-blackout"
   headline = "What if because this website didn't pay as much as a major corporation, you couldn't see it?"
   body = "That's what could happen if the FCC doesn't stand up to cable companies and doesn't enshrine Net Neutrality in law."
-  internetUtility = "In 2014, the internet is no less important than electricty or your phone. Tell the FCC. <strong>Tell them that it's time to classify ISPs as Common Carriers</strong>."
+  internetUtility = "In 2014, the internet is no less important than electricty or your phone.<br/><br/>Tell the FCC.<br/><br/><span id='fcc-superstrong'>Tell them that it's time to classify ISPs as Common Carriers.</span>"
   contact = ""
   social = ""
   socialId = "fccblackout-social"
-  html = "<div id='#{divId}'><h1>#{headline}</h1><p>#{body}</p><h2>#{internetUtility}</h2><div id='#{socialId}'>#{social}</div></div>"
+  html = "<div id='#{divId}'><div id='#{divId}-child'><h1>#{headline}</h1><h2>#{body}</h2><h3>#{internetUtility}</h3><div id='#{socialId}'>#{social}</div></div></div>"
   $("body").prepend(html)
   $("##{divId}").css("height",$(document).height())
-  .css("width",$(document).width())
+  .css("width",$(window).width())
   .css("position","fixed")
   .css("background","#000")
   .css("color","#fff")
+  .css("z-index","9999")
+  $("##{divId}-child").css("padding","2rem")
+  .css("text-align","center")
+  $("#fcc-superstrong").css("font-weight","700")
+  .css("text-decoration","underline")
+  .css("display","block")
+  $("##{divId} h3").css("margin","2em")
 
 $ ->
   now = new Date()
-  start = new Date(2014,05,15,0,0,0)
-  end = new Date(2014,05,16,0,0,0)
+  start = new Date(2014,5,15)
+  end = new Date(2014,5,16)
   if start < now < end then blackoutPage()
 
 

@@ -10,10 +10,6 @@ function cascadeJQLoad(i) { // Use alternate CDNs where appropriate to load jQue
     ];
     // Paths to your libraries that require jQuery, relative to this file
     var dependent_libraries = [
-        "jquery.nicescroll.min.js",
-        "purl.js",
-        "jquery.cookie.js",
-        "jquery.arrayUtilities.min.js",
         "c.js"
     ];
     if (window.jQuery === undefined && i < jq_paths.length) {
